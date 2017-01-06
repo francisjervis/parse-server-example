@@ -26,7 +26,14 @@ var api = new ParseServer({
     process.env.AWS_ACCESS_KEY_ID || "AWS_ACCESS_KEY_ID",
     process.env.AWS_SECRET_ACCESS_KEY || "AWS_SECRET_ACCESS_KEY",
     process.env.BUCKET_NAME || "BUCKET_NAME"
-  )
+  ),
+  push: {
+    ios: {
+      pfx: 'tfcert.p12',
+      bundleId: 'com.timesfree.TimesFree', // The bundle identifier associate with your app
+      production: true // Specifies which environment to connect to: Production (if true) or Sandbox
+    }
+  }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
